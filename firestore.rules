@@ -1,0 +1,26 @@
+rules_version = '2';
+
+// Firestore Security Rules for Researches from AI
+// Production mode — locked down by default, opened up selectively.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ============ Articles (public read published, admin write) ============
+    match /research_articles/{docId} {
+      allow read: if resource.data.status == 'published';
+      allow write: if false; // Only via Admin SDK (server)
+    }
+
+    // ============ Tags (public read, admin write) ============
+    match /research_tags/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ============ Default: deny everything else ============
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
