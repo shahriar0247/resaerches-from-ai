@@ -65,6 +65,17 @@ const ARTICLE_META: Record<string, ArticleMeta> = {
     featured: true,
     coverGradient: "from-violet-500 to-fuchsia-500",
   },
+  "swe-17-max-vs-glm-52-islamic-research.md": {
+    title: "SWE-1.7 Max vs GLM-5.2 High for Devin: Which Model Is Best for Islamic Research?",
+    category: "AI & Models",
+    excerpt: "A benchmark-based comparison of SWE-1.7 Max vs GLM-5.2 High (and every other frontier model in Devin) for Islamic-research work — covering knowledge, reasoning, Arabic/multilingual, citation accuracy, agentic tool use, and instruction following. Includes a full ranking table and honest caveats about what benchmarks can and cannot tell you.",
+    tags: ["ai", "llm", "devin", "swe-1.7", "glm-5.2", "claude-opus", "gpt-5", "benchmarks", "islamic-research", "citation-accuracy", "hallucination", "arabic"],
+    source: "Deep Research (web search + benchmark synthesis)",
+    sourceType: "report",
+    author: "AI Deep Research (GLM-5.2 High)",
+    featured: true,
+    coverGradient: "from-cyan-500 to-blue-600",
+  },
 };
 
 function slugify(text: string): string {
